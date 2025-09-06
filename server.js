@@ -7,6 +7,9 @@ const methodOverride = require('method-override')
 const morgan = require('morgan')
 const session = require('express-session')
 
+const isSignedIn = require('./middleware/is-signed-in')
+const passUserToView = require('./middleware/pass-user-to-view')
+
 const port = process.env.PORT ? process.env.PORT : "3000"
 
 const authController = require('./controllers/auth')
@@ -28,6 +31,8 @@ app.use(
     })
 )
 
+app.use(passUserToView)
+
 app.get('/', (req, res) => {
     res.render('index.ejs', {
         user: req.session.user
@@ -35,6 +40,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/auth', authController)
+app.use(isSignedIn)
 
 
 
