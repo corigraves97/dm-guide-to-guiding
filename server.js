@@ -15,6 +15,7 @@ const port = process.env.PORT ? process.env.PORT : "3000"
 const authController = require('./controllers/auth')
 const campaignsController = require('./controllers/campaigns')
 const notesController = require('./controllers/notes')
+const encountersController = require('./controllers/encounters')
 
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -48,6 +49,7 @@ app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/campaigns', campaignsController)
 app.use('/users/:userId/campaigns', notesController)
+app.use('/users/:userId/campaigns', encountersController)
 
 
 

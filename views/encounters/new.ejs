@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Encounter</title>
+</head>
+<body>
+    <h1> Add Encounter </h1>
+    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters" method = "POST">
+        <label for="encounterName">Encounter Name:</label>
+        <input type="text" name="encounterName" id="encounterName"/>
+        <label for="encounterDetails">Encounter Details:</label>
+        <textarea name="encounterDetails"></textarea>
+        <button type="submit">Add Encounter!</button>
+    </form>
+</body>
+</html>

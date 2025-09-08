@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encounter <%= encounter.encounterName %> </title>
+</head>
+<body>
+    <h1> <%= encounter.encounterName %> Encounter</h1>
+        <p><%= encounter.encounterDetails %></p>
+        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounter._id %>/edit">Edit Encounter <%= encounter.encounterName %></a>
+        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= encounter._id %>?_method=DELETE" method="POST">
+            <button type="submit" > Delete Encounter <%= encounter.encounterName %> </button>
+        </form>
+        <%- include('../partials/_navbar.ejs') %> 
+</body>
+</html>
