@@ -9,23 +9,22 @@
  <body>
     <h1>Welcome Dungeon Master <%= user.username %></h1>
     <p>
-        <a href="/users/<%= user._id %>/campaigns/new"> Create a New Campaign </a>
-    </p>
-    <p>
          Your Campaigns
         <ul>
-            <% campaigns.forEach((campaign) => { %>
+            <% if (campaigns.length > 0) { %>
+                <% campaigns.forEach((campaign) => { %>
             <li>
                 <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>">
                 <%= campaign.campaignName %>
                 </a>
             </li>
             <% }) %>
+                <% } else { %> 
+                <p> No Campaigns Added </p>
+                <% } %> <br>
         </ul>
+    <a href="/users/<%= user._id %>/campaigns/new"> Create a New Campaign </a>
     </p>  
-    <p>
-        <a href="/auth/logout">Logout</a>
-    </p>
-    
+    <a href="/auth/logout">Logout</a>  
  </body>
  </html>

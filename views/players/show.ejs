@@ -1,0 +1,23 @@
+<!-- views/players/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= player.playerName %> </title>
+</head>
+<body>
+    <h1> <%= player.playerName %></h1>
+        <p><%= player.playerType %></p>
+        <p><%= player.playerRace %></p>
+        <p><%= player.playerClass %></p>
+        <p> <%= player.playerSubclass %></p>
+        <p> <%= player.playerHP %></p>
+        <p> <%= player.playerNotes %></p>
+        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>/edit">Edit Player <%= player.playerName %></a>
+        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>?_method=DELETE" method="POST">
+            <button type="submit" > Delete <%= player.playerName %> </button>
+        </form>
+        <%- include('../partials/_navbar.ejs') %> 
+</body>
+</html>

@@ -81,6 +81,18 @@ router.get('/:campaignId', async (req, res) => {
     }
 })
 
+router.delete('/:campaignId', async (req, res) => {
+  try {
+      const currentUser = await User.findById(req.session.user._id)
+      const campaign =  currentUser.campaigns.id(req.params.campaignId)
+      currentUser.campaigns.id(req.params.campaignId).deleteOne()
+      await currentUser.save()
+      res.redirect(`/users/${currentUser._id}/campaigns`)
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
 
 
 

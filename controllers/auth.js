@@ -30,7 +30,7 @@ router.post('/signup', async (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashedPassword
     const user = await User.create(req.body)
-    res.send(`Welcome to The DM'S GUIDE TO GUIDING, ${user.username}`)
+    res.render('campaigns/index.ejs')
 })
 
 router.post('/login', async (req, res) => {

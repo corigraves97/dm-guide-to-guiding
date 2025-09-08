@@ -1,0 +1,33 @@
+<!-- views/players/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= player.playerName %></title>
+</head>
+<body>
+    <h1>Edit <%= player.playerName %></h1>
+    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>?_method=PUT" method = "POST">
+        <label for="playerType">Player Type:</label>
+        <select id="playerType" name="playerType">
+            <option value="PC">PC</option>
+            <option value="NPC">NPC</option>
+        </select>
+        <label for="playerName">Player Name:</label>
+        <input type="text" name="playerName" id="playerName" value="<%= player.playerName %>"/>
+        <label for="playerRace">Player Race</label>
+        <input type="text" name="playerRace" id="playerRace" value="<%= player.playerRace %>"/>
+        <label for= "playerClass">Player Class</label>
+        <input type="text" name="playerClass" id="playerClass" value="<%= player.playerClass %>"/>
+        <label for="playerSubclass">Player Subclass</label>
+        <input type="text" name="playerSubclass" id="playerSubclass" value="<%= player.playerSubclass %>"/>
+        <label for="playerHP">Hit Points</label>
+        <input type="text" name="playerHP" id="playerHP" />
+        <label for="playerNotes">Notes</label>
+        <textarea name="playerNotes" id="playerNotes"></textarea>
+        <button type="submit">Update <%= player.playerName %></button>
+    </form>
+    <%- include('../partials/_navbar.ejs') %> 
+</body>
+</html>

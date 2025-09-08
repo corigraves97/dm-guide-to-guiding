@@ -21,15 +21,19 @@
             <% if (campaign.players.length> 0) { %>
                 <% campaign.players.forEach((player)=> { %>
                     <li>
-                        <%= player.playerName %> (<%= player.playerType %>)
+                        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>"><%= player.playerName %> (<%= player.playerType %>)</a>
                     </li>
-                    <button type="submit">Delete Player</button>
+                     <form
+                        action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>?_method=DELETE"
+                        method="POST" style="display:inline">
+                        <button type="submit">Delete Player</button>
+                    </form>
+                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>/edit">Edit</a>
                     <% }) %>
                         <% } else { %>
-                            <li> No players added yet</li>
-                            <% } %>
-                                <button type="submit">Edit Players</button>
-                                <button typer="submit">Add Players</button>
+                            <li>No Players added yet</li>
+                            <% } %> <br>
+                                <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/new">Add New Player</a>
         </ul>
     </div>
     <div>
@@ -37,19 +41,18 @@
         <ul>
             <% if (campaign.encounters.length> 0) { %>
                 <% campaign.encounters.forEach((encounters)=> { %>
-                    <li><a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounters._id %>">Encounter
-                            <%= encounters.encounterName %></a></li>
+                    <li><a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounters._id %>">
+                            <%= encounters.encounterName %> Encounter</a></li>
                     <form
                         action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounters._id %>?_method=DELETE"
                         method="POST" style="display:inline">
                         <button type="submit">Delete Encounter</button>
                     </form>
-                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounters._id %>/edit">Edit
-                        Encounter</a>
+                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounters._id %>/edit">Edit</a>
                     <% }) %>
                         <% } else { %>
                             <li>No Encounters added yet</li>
-                            <% } %>
+                            <% } %> <br>
                                 <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/new">Add New Encounter</a>
         </ul>
     </div>
@@ -63,18 +66,20 @@
                     <form
                         action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>?_method=DELETE"
                         method="POST" style="display:inline">
-                        <button type="submit">Delete Note</button>
+                        <button type="submit">Delete</button>
                     </form>
-                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>/edit">Edit
-                        Note</a>
+                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>/edit">Edit</a>
                     <% }) %>
                         <% } else { %>
                             <li>No session notes added yet</li>
-                            <% } %>
+                            <% } %> <br>
                                 <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/new">Add Session
                                     Note</a>
         </ul>
     </div>
+    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete <%= campaign.campaignName %> Campaign</button>
+    </form>
     <%- include('../partials/_navbar.ejs') %>
 </body>
 

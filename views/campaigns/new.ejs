@@ -22,18 +22,20 @@
         <input type="text" name="playerRace" id="playerRace" />
         <label for="playerClass">Player Class</label>
         <input type="text" name="playerClass" id="playerClass" />
+        <label for="playerSubclass">Player Subclass</label>
+        <input type="text" name="playerSubclass" id="playersubClass" />
         <label for="playerHP">Hit Points</label>
         <input type="text" name="playerHP" id="playerHP" />
         <label for="playerNotes">Notes</label>
-        <input type="text" name="playerNotes" id="playerNotes" />
+        <textarea name="playerNotes" id="playerNotes"></textarea>
         <label for="encounterName">Encounter Name:</label>
         <input type="text" name="encounterName" id="encounterName" />
         <label for="encounterDetails">Encounter Details</label>
-        <input type="text" name="encounterDetails" id="encounterDetails" />
+        <textarea name="encounterDetails" id="encounterDetails"></textarea>
         <label for="sessionNumber">Session Number:</label>
         <input type="text" name="sessionNumber" id="sessionNumber" />
         <label for="sessionDetails">Session Notes</label>
-        <input type="sessionDetails" name="sessionDetails" />
+        <textarea name="sessionDetails" id="sessionDetails"></textarea>
         <button type="submit">Create Campaign!</button>
     </form>
      <%- include('../partials/_navbar.ejs') %>

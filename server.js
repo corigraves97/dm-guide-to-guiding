@@ -16,6 +16,7 @@ const authController = require('./controllers/auth')
 const campaignsController = require('./controllers/campaigns')
 const notesController = require('./controllers/notes')
 const encountersController = require('./controllers/encounters')
+const playersController = require('./controllers/players')
 
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -50,6 +51,7 @@ app.use(isSignedIn)
 app.use('/users/:userId/campaigns', campaignsController)
 app.use('/users/:userId/campaigns', notesController)
 app.use('/users/:userId/campaigns', encountersController)
+app.use('/users/:userId/campaigns', playersController)
 
 
 
