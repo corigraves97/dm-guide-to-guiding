@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Session Notes</title>
+</head>
+<body>
+    <h1> Add Session Note</h1>
+    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes" method = "POST">
+        <label for="sessionNumber">Session Number:</label>
+        <input type="text" name="sessionNumber" id="sessionNumber"/>
+        <label for="sessionDetails">Session Notes:</label>
+        <textarea name="sessionDetails"></textarea>
+        <button type="submit">Add Session Notes!</button>
+    </form>
+</body>
+</html>

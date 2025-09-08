@@ -1,3 +1,4 @@
+<!-- views/index -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +8,7 @@
 </head>
 <body>
     <% if (user) { %>
-    <h1>Welcome Dungeon Master <%= user.username %>!</h1>
-    <p>
-        <a href="/campaigns">Create a New Campaign</a>
-    </p>
-    <p>
-        <a href="/campaigns/new">View My Campaigns</a>
-    </p>
-    <p>
-        <a href="/auth/logout">Log Out</a>
-    </p>
+   <a href="./campaigns/index.ejs">
     <% } else { %>
     <h1> Welcome Dungeon Master</h1>
     <p>

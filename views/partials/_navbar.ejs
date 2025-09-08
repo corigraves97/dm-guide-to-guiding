@@ -1,0 +1,7 @@
+<!-- views/partials/_navbar.ejs-->
+
+<nav>
+    <% if(user) { %>
+    <a href="/users/<%= user._id %>/campaigns">Back to Home</a>
+    <% } %>
+</nav>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session <%= sessionNote.sessionNumber %> Notes</title>
+</head>
+<body>
+    <h1>Session <%= sessionNote.sessionNumber %> Notes</h1>
+        <p><%= sessionNote.sessionDetails %></p>
+        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>/edit">Edit Session <%= sessionNote.sessionNumber %> Notes</a>
+        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>?_method=DELETE" method="POST">
+            <button type="submit" > Delete Session <%= sessionNote.sessionNumber %>  Notes </button>
+        </form>
+        <%- include('../partials/_navbar.ejs') %> 
+</body>
+</html>

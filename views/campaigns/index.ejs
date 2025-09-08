@@ -1,0 +1,31 @@
+<!-- views/campaigns/index.ejs-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Dungeom Master <%=user.username %></title>
+ </head>
+ <body>
+    <h1>Welcome Dungeon Master <%= user.username %></h1>
+    <p>
+        <a href="/users/<%= user._id %>/campaigns/new"> Create a New Campaign </a>
+    </p>
+    <p>
+         Your Campaigns
+        <ul>
+            <% campaigns.forEach((campaign) => { %>
+            <li>
+                <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>">
+                <%= campaign.campaignName %>
+                </a>
+            </li>
+            <% }) %>
+        </ul>
+    </p>  
+    <p>
+        <a href="/auth/logout">Logout</a>
+    </p>
+    
+ </body>
+ </html>

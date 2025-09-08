@@ -1,0 +1,61 @@
+<!-- views/campaigns/show.ejs-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= campaign.campaignName %></title>
+ </head>
+ <body>
+    <h1> <%= campaign.campaignName %></h1>
+    <div>
+        <h2>Players</h2>
+        <ul>
+            <% if (campaign.players.length > 0) { %>
+                <% campaign.players.forEach((player) => { %>
+                    <li><%= player.playerName %> (<%= player.playerType %>)</li>
+                    <button type="submit">Delete Player</button>
+                <% }) %>
+            <% } else { %>
+                <li> No players added yet</li>
+            <% } %>
+            <button type="submit">Edit Players</button>
+            <button typer="submit">Add Players</button>
+        </ul>
+    </div>
+    <div>
+        <h2>Encounters</h2>
+        <ul>
+            <% if (campaign.encounters.length > 0) { %>
+                <% campaign.encounters.forEach((encounter) => { %>
+                    <li><%= encounter.encounterName %></li>
+                    <button type="submit">Delete Encounter</button>
+                <% }) %>
+            <% } else { %>
+                <li> No encounters added yet</li>
+            <% } %>
+            <button type="submit">Edit Encounters</button>
+            <button typer="submit">Add Encounters</button>
+        </ul>
+    </div>
+        <div>
+            <h2>Session Notes</h2>
+                <ul>
+                <% if (campaign.sessionNotes.length > 0) { %>
+                <% campaign.sessionNotes.forEach((sessionNote) => { %>
+                    <li><a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>">Session <%= sessionNote.sessionNumber %></a></li>
+                    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>?_method=DELETE" method="POST" style="display:inline">
+                    <button type="submit">Delete Note</button>
+                    </form>
+                    <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= sessionNote._id %>/edit">Edit Note</a>
+                <% }) %>
+                <% } else { %>
+                    <li>No session notes added yet</li>
+                <% } %>
+                <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/new">Add Session Note</a>
+                </ul>
+        </div>
+    <%- include('../partials/_navbar.ejs') %> 
+ </body>
+ </html>

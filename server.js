@@ -13,6 +13,9 @@ const passUserToView = require('./middleware/pass-user-to-view')
 const port = process.env.PORT ? process.env.PORT : "3000"
 
 const authController = require('./controllers/auth')
+const campaignsController = require('./controllers/campaigns')
+const notesController = require('./controllers/notes')
+
 
 mongoose.connect(process.env.MONGODB_URI)
 
@@ -34,13 +37,19 @@ app.use(
 app.use(passUserToView)
 
 app.get('/', (req, res) => {
-    res.render('index.ejs', {
-        user: req.session.user
-    })
+    if(req.session.user){
+        res.redirect(`/users/${req.session.user._id}/campaigns`)
+    } else {
+        res.render('index.ejs')
+    }
 })
 
 app.use('/auth', authController)
 app.use(isSignedIn)
+app.use('/users/:userId/campaigns', campaignsController)
+app.use('/users/:userId/campaigns', notesController)
+
+
 
 
 

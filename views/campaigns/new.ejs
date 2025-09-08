@@ -1,0 +1,41 @@
+<!-- views/campaigns/new.ejs-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Campaign</title>
+ </head>
+ <body>
+    <h1>Create a New Campaign!</h1>
+    <form action="/users/<%= user._id %>/campaigns" method="POST">
+        <label for="campaignName">Campaign Name:</label>
+        <input type="text" name="campaignName" id="campaignName" required />
+        <label for="playerType">Player Type</label>
+        <select id="playerType" name="playerType">
+            <option value="PC">PC</option>
+            <option value="NPC">NPC</option>
+        </select>
+        <label for="playerName">Player Name:</label>
+        <input type="text" name="playerName" id="playerName" />
+        <label for="playerRace">Player Race</label>
+        <input type="text" name="playerRace" id="playerRace" />
+        <label for="playerClass">Player Class</label>
+        <input type="text" name="playerClass" id="playerClass" />
+        <label for="playerHP">Hit Points</label>
+        <input type="text" name="playerHP" id="playerHP" />
+        <label for="playerNotes">Notes</label>
+        <input type="text" name="playerNotes" id="playerNotes" />
+        <label for="encounterName">Encounter Name:</label>
+        <input type="text" name="encounterName" id="encounterName" />
+        <label for="encounterDetails">Encounter Details</label>
+        <input type="text" name="encounterDetails" id="encounterDetails" />
+        <label for="sessionNumber">Session Number:</label>
+        <input type="text" name="sessionNumber" id="sessionNumber" />
+        <label for="sessionDetails">Session Notes</label>
+        <input type="sessionDetails" name="sessionDetails" />
+        <button type="submit">Create Campaign!</button>
+    </form>
+     <%- include('../partials/_navbar.ejs') %>
+ </body>
+ </html>

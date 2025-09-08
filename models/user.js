@@ -70,7 +70,10 @@ const userSchema = new mongoose.Schema({
     campaigns: [campaignSchema],
     
 })
-
+const Notes = mongoose.model('Notes', noteSchema)
+const Encounters = mongoose.model('Encounters', encounterSchema)
+const Players = mongoose.model('Players', playerSchema)
+const Campaign = mongoose.model('Campaign', campaignSchema)
 const User = mongoose.model('User', userSchema)
 
 module.exports = User
