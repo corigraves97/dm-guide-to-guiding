@@ -4,21 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/players/show.css" />
     <title><%= player.playerName %> </title>
 </head>
-<body>
-    <h1> <%= player.playerName %></h1>
-        <p><%= player.playerType %></p>
-        <p><%= player.playerRace %></p>
-        <p><%= player.playerClass %></p>
-        <p> <%= player.playerSubclass %></p>
-        <p> <%= player.playerHP %></p>
-        <p> <%= player.playerNotes %></p>
-        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>/edit">Edit Player <%= player.playerName %></a>
-        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>?_method=DELETE" method="POST">
-            <button type="submit" > Delete <%= player.playerName %> </button>
-        </form>
+<body class="show-body">
+    <div class="show-container">
+        <h1 class="show-header"> <%= player.playerName %></h1>
+        <div class="grid">
+            <div class="box">
+                <p>Player Type: <%= player.playerType %> </p>
+                <p>Player Race: <%= player.playerRace %></p>
+                <p>Player Class: <%= player.playerClass %></p>
+                <p>Player Subclass: <%= player.playerSubclass %></p>
+                <p>Player HP: <%= player.playerHP %></p>
+                <p>Player Notes: <%= player.playerNotes %></p>
+                <div class="submit-container">
+                    <div class="actions">
+                        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>/edit" class="editbtn">Edit <%= player.playerName %></a>
+                        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/players/<%= player._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="deletebtn"> Delete <%= player.playerName %> </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         <%- include('../partials/_navbar.ejs') %> 
 </body>
 </html>

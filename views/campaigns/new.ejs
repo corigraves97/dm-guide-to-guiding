@@ -4,41 +4,57 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/campaign/new.css" />
     <title>Create a New Campaign</title>
  </head>
- <body>
-    <h1>Create a New Campaign!</h1>
-    <form action="/users/<%= user._id %>/campaigns" method="POST">
-        <label for="campaignName">Campaign Name:</label>
-        <input type="text" name="campaignName" id="campaignName" required />
-        <label for="playerType">Player Type</label>
-        <select id="playerType" name="playerType">
-            <option value="PC">PC</option>
-            <option value="NPC">NPC</option>
-        </select>
-        <label for="playerName">Player Name:</label>
-        <input type="text" name="playerName" id="playerName" />
-        <label for="playerRace">Player Race</label>
-        <input type="text" name="playerRace" id="playerRace" />
-        <label for="playerClass">Player Class</label>
-        <input type="text" name="playerClass" id="playerClass" />
-        <label for="playerSubclass">Player Subclass</label>
-        <input type="text" name="playerSubclass" id="playersubClass" />
-        <label for="playerHP">Hit Points</label>
-        <input type="text" name="playerHP" id="playerHP" />
-        <label for="playerNotes">Notes</label>
-        <textarea name="playerNotes" id="playerNotes"></textarea>
-        <label for="encounterName">Encounter Name:</label>
-        <input type="text" name="encounterName" id="encounterName" />
-        <label for="encounterDetails">Encounter Details</label>
-        <textarea name="encounterDetails" id="encounterDetails"></textarea>
-        <label for="sessionNumber">Session Number:</label>
-        <input type="text" name="sessionNumber" id="sessionNumber" />
-        <label for="sessionDetails">Session Notes</label>
-        <textarea name="sessionDetails" id="sessionDetails"></textarea>
-        <button type="submit">Create Campaign!</button>
-    </form>
+ <body class="new-body">
+    <div class="new-container">
+        <h1 class="title">Create a New Campaign!</h1>
+        <form action="/users/<%= user._id %>/campaigns" method="POST"class="form">
+            <div class="form-grid">
+                <div class="form-box">
+                    <h2>Campaign Name</h2>
+                    <label for="campaignName">Campaign Name:</label>
+                    <input type="text" name="campaignName" id="campaignName" required />
+                </div>
+            <div class="form-box">
+                <h2>Player Information</h2>
+                <label for="playerType">Player Type</label>
+                <select id="playerType" name="playerType">
+                    <option value="PC">PC</option>
+                    <option value="NPC">NPC</option>
+                </select>
+                <label for="playerName">Player Name:</label>
+                 <input type="text" name="playerName" id="playerName" />
+                <label for="playerRace">Player Race</label>
+                <input type="text" name="playerRace" id="playerRace" />
+                <label for="playerClass">Player Class</label>
+                <input type="text" name="playerClass" id="playerClass" />
+                <label for="playerSubclass">Player Subclass</label>
+                <input type="text" name="playerSubclass" id="playersubClass" />
+                <label for="playerHP">Hit Points</label>
+                <input type="text" name="playerHP" id="playerHP" />
+                <label for="playerNotes">Notes</label>
+                <textarea name="playerNotes" id="playerNotes"></textarea>
+            </div>
+            <div class="form-box">
+                <h2>Encounter Information</h2>   
+                <label for="encounterName">Encounter Name:</label>
+                <input type="text" name="encounterName" id="encounterName" />
+                <label for="encounterDetails">Encounter Details</label>
+                <textarea name="encounterDetails" id="encounterDetails"></textarea>
+            </div>
+            <div class="form-box">
+                <label for="sessionNumber">Session Number:</label>
+                <input type="text" name="sessionNumber" id="sessionNumber" />
+                <label for="sessionDetails">Session Notes</label>
+                <textarea name="sessionDetails" id="sessionDetails"></textarea>
+            </div>
+            <div class="submit-container">
+                <button type="submit" class="submitbtn">Create Campaign!</button>
+            </div>
+        </form>
+    </div>
      <%- include('../partials/_navbar.ejs') %>
  </body>
  </html>

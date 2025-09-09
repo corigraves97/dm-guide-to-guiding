@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/encounters/new.css" />
     <title>Add Encounter</title>
 </head>
-<body>
-    <h1> Add Encounter </h1>
-    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters" method = "POST">
-        <label for="encounterName">Encounter Name:</label>
-        <input type="text" name="encounterName" id="encounterName"/>
-        <label for="encounterDetails">Encounter Details:</label>
-        <textarea name="encounterDetails"></textarea>
-        <button type="submit">Add Encounter!</button>
-    </form>
+<body class="new-encounter-body">
+    <div class="new-encounter-container">
+        <h1 class="header"> Add Encounter </h1>
+        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters" method = "POST" class="form">
+            <div class="encounter-form-grid">
+                <div class="encounter-form-box">
+                    <label for="encounterName">Encounter Name:</label>
+                    <input type="text" name="encounterName" id="encounterName"/>
+                    <label for="encounterDetails">Encounter Details:</label>
+                    <textarea name="encounterDetails"></textarea>
+                    <div class="submit-container">
+                        <button type="submit" class="submitbtn">Add Encounter!</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
     <%- include('../partials/_navbar.ejs') %> 
 </body>
 </html>

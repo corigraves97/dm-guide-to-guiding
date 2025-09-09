@@ -4,16 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/encounters/show.css" />
     <title>Encounter <%= encounter.encounterName %> </title>
 </head>
-<body>
-    <h1> <%= encounter.encounterName %> Encounter</h1>
-        <p><%= encounter.encounterDetails %></p>
-        <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounter._id %>/edit">Edit Encounter <%= encounter.encounterName %></a>
-        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= encounter._id %>?_method=DELETE" method="POST">
-            <button type="submit" > Delete Encounter <%= encounter.encounterName %> </button>
-        </form>
+<body class="show-body">
+    <div class="show-container">
+        <h1 class="header"> <%= encounter.encounterName %> Encounter</h1>
+            <div class="grid">
+                <div class="box">
+                    <p><%= encounter.encounterDetails %></p>
+                    <div class="submit-container">
+                        <div class="actions">
+                            <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>/encounters/<%= encounter._id %>/edit">Edit Encounter <%= encounter.encounterName %></a>
+                            <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes/<%= encounter._id %>?_method=DELETE" method="POST">
+                                <button type="submit" > Delete Encounter <%= encounter.encounterName %> </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
         <%- include('../partials/_navbar.ejs') %> 
 </body>
 </html>

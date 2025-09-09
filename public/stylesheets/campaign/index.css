@@ -21,7 +21,7 @@
     top: 20px;
     left: 20px;
     color: #b7410e;
-    font-size: 1.4rem;
+    font-size: 2.5rem;
 }
 
 .dashboard-main {
@@ -62,7 +62,7 @@
 }
 
 .campaigns-box a {
-    color: #ffffff;
+    color: #792828;
     font-weight: bold;
     text-decoration: none;
 }
@@ -83,7 +83,6 @@
     color: white;
     font-size: 1.4rem;
     font-weight: bold;
-    text-decoration: none;
     border-radius: 12px;
     border: solid #792828;
     border-style: outset;

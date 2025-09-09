@@ -1,4 +1,3 @@
-/* Campaign Show Page */
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
 
@@ -21,13 +20,13 @@
   text-align: center;
   font-size: 3rem;
   margin-bottom: 30px;
-  color: #B7410E; 
+  color: #993809; 
 }
 
 
 .campaign-body-div {
   background-color: #B78F7A; 
-  color: white;
+  color: #993809;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -62,6 +61,7 @@
 
 .item-list-li a:first-child {
   color: #082C60;
+  font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
 }
@@ -136,7 +136,7 @@
 .campaign-body > form button {
   font-family: 'Pirata One', sans-serif;
   padding: 10px 20px;
-  background-color: #a23535;
+  background-color: #993809;
   color: white;
   border: none;
   border-radius: 12px;
@@ -147,4 +147,22 @@
 
 .campaign-body > form button:hover {
   background-color: #792828;
+}
+
+.add-new {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 14px;
+    background-color: #993809;
+    color: white;
+    border: 2px solid #792828;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.add-new:hover {
+  background-color: #792828;
+  color: white;
 }
