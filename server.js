@@ -11,6 +11,7 @@ const isSignedIn = require('./middleware/is-signed-in')
 const passUserToView = require('./middleware/pass-user-to-view')
 
 const port = process.env.PORT ? process.env.PORT : "3000"
+const path = require('path')
 
 const authController = require('./controllers/auth')
 const campaignsController = require('./controllers/campaigns')
@@ -27,7 +28,8 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
-app.use(morgan('dev'))
+//app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(
     session({
         secret: process.env.SESSION_SECRET,

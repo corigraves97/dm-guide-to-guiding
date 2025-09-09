@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+.pirata-one-regular {
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dashboard-body {
+    font-family: 'Pirata One', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #051c3c;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #b7410e;
+    font-size: 1.4rem;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.dashboard-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #b7410e
+}
+
+.campaigns-box {
+    background: #B78F7A;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 40px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    min-width: 300px;
+}
+
+.campaigns-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.campaigns-box li {
+    margin: 10px 0;
+    font-size: 2.0rem;
+}
+
+.campaigns-box a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.campaigns-box a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #b7410e;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px;
+    border: solid #792828;
+    border-style: outset;
+    box-shadow: 6px 6px 2px 1px rgba(48, 47, 47, 0.35);
+}
+
+.dashboard-btn:hover {
+    background-color: #792828;
+}

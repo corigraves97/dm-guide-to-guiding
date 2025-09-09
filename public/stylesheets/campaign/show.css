@@ -1,0 +1,150 @@
+/* Campaign Show Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/* Font */
+.pirata-one-regular {
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Page Body */
+.campaign-body {
+  font-family: 'Pirata One', sans-serif;
+  background-color: #051c3c; /* white page */
+  padding: 20px;
+  margin: 0;
+}
+
+/* Main Campaign Header */
+.campaign-body h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #B7410E; /* red-orange */
+}
+
+/* Section Boxes (Players, Encounters, Notes) */
+.campaign-body-div {
+  background-color: #B78F7A; /* red box */
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+}
+
+/* Section Header */
+.campaign-body-div h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+/* Lists */
+.campaign-body-div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List Items Flex Layout */
+.item-list-li {
+  display: flex;
+  justify-content: space-between; /* name left, actions right */
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+/* Player/Encounter/Note Links */
+.item-list-li a:first-child {
+  color: #082C60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.item-list-li a:first-child:hover {
+  text-decoration: underline;
+}
+
+/* Container for Edit/Delete */
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Edit Link as Button */
+.item-actions a {
+  padding: 4px 10px;
+  background-color: #993809;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Pirata One', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.item-actions a:hover {
+  background-color: #f0f0f0;
+  color: #993809;
+}
+
+/* Delete Button */
+.item-actions button {
+  font-family: 'Pirata One', sans-serif;
+  padding: 4px 10px;
+  background-color: #993809;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.item-actions button:hover {
+  background-color: #f0f0f0;
+  color: #993809;
+}
+
+/* Add New buttons */
+.campaign-body-div > a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 12px;
+  background-color: white;
+  color: #a23535;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.campaign-body-div > a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Delete Campaign Button at bottom */
+.campaign-body > form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.campaign-body > form button {
+  font-family: 'Pirata One', sans-serif;
+  padding: 10px 20px;
+  background-color: #a23535;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.campaign-body > form button:hover {
+  background-color: #792828;
+}

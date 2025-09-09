@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/index.css" />
     <title>Home Page</title>
 </head>
-<body>
-    <% if (user) { %>
-   <a href="./campaigns/index.ejs">
-    <% } else { %>
-    <h1> Welcome Dungeon Master</h1>
-    <p>
-        <a href="/auth/signup"> Sign Up</a>
-    </p>
-    <p>
-        <a href="/auth/login">Login</a>
-    </p>
+<body class="index-body">
+    <div class="index-container">
+        <% if (user) { %>
+        <a href="./campaigns/index.ejs"></a>
+        <% } else { %>
+        <div class="text-box">
+            <h1 class="main-header"> The Dungeon Master's Guide to Guiding</h1>
+            <p class="sub-header"> A DM's Campaign Tracker</p>
+        </div>
+        <div class="auth-links">
+            <p>
+                <a href="/auth/signup" class="signup-link"> Sign Up</a>
+            </p>
+            <p>
+                <a href="/auth/login" class="login-link">Login</a>
+            </p>
+        </div>
+    </div>
     <% } %>
 </body>
 </html>

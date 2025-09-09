@@ -1,30 +1,37 @@
 <!-- views/campaigns/index.ejs-->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Dungeom Master <%=user.username %></title>
- </head>
- <body>
-    <h1>Welcome Dungeon Master <%= user.username %></h1>
-    <p>
-         Your Campaigns
-        <ul>
+    <link rel="stylesheet" href="/stylesheets/campaign/index.css" />
+    <title>Dungeon Master <%= user.username %>'s Dashboard</title>
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <h2>Welcome Dungeon Master, <%= user.username %></h2>
+    </header>
+    <main class="dashboard-main">
+        <h1 class="dashboard-title">Your Campaigns</h1>
+        <div class="campaigns-box">
             <% if (campaigns.length > 0) { %>
-                <% campaigns.forEach((campaign) => { %>
-            <li>
-                <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>">
-                <%= campaign.campaignName %>
-                </a>
-            </li>
-            <% }) %>
-                <% } else { %> 
-                <p> No Campaigns Added </p>
-                <% } %> <br>
-        </ul>
-    <a href="/users/<%= user._id %>/campaigns/new"> Create a New Campaign </a>
-    </p>  
-    <a href="/auth/logout">Logout</a>  
- </body>
- </html>
+                <ul>
+                    <% campaigns.forEach((campaign) => { %>
+                        <li>
+                            <a href="/users/<%= user._id %>/campaigns/<%= campaign._id %>">
+                                <%= campaign.campaignName %>
+                            </a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No Campaigns Added</p>
+            <% } %>
+        </div>
+        <div class="dashboard-actions">
+            <a href="/users/<%= user._id %>/campaigns/new" class="dashboard-btn">Create a New Campaign</a>
+            <a href="/auth/logout" class="dashboard-btn">Logout</a>
+        </div>
+    </main>
+</body>
+</html>
