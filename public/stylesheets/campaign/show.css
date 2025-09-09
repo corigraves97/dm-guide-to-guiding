@@ -1,32 +1,32 @@
-/* Campaign Show Page Styles */
+/* Campaign Show Page */
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
-/* Font */
+
 .pirata-one-regular {
   font-family: "Pirata One", system-ui;
   font-weight: 400;
   font-style: normal;
 }
 
-/* Page Body */
+
 .campaign-body {
   font-family: 'Pirata One', sans-serif;
-  background-color: #051c3c; /* white page */
+  background-color: #051c3c; 
   padding: 20px;
   margin: 0;
 }
 
-/* Main Campaign Header */
+
 .campaign-body h1 {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 30px;
-  color: #B7410E; /* red-orange */
+  color: #B7410E; 
 }
 
-/* Section Boxes (Players, Encounters, Notes) */
+
 .campaign-body-div {
-  background-color: #B78F7A; /* red box */
+  background-color: #B78F7A; 
   color: white;
   padding: 20px;
   border-radius: 12px;
@@ -34,7 +34,7 @@
   font-size: 1.6rem;
 }
 
-/* Section Header */
+
 .campaign-body-div h2 {
   margin-top: 0;
   font-size: 2rem;
@@ -42,24 +42,24 @@
   padding-bottom: 5px;
 }
 
-/* Lists */
+
 .campaign-body-div ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* List Items Flex Layout */
+
 .item-list-li {
   display: flex;
-  justify-content: space-between; /* name left, actions right */
+  justify-content: space-between; 
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
   font-size: 1.2rem;
 }
 
-/* Player/Encounter/Note Links */
+
 .item-list-li a:first-child {
   color: #082C60;
   text-decoration: none;
@@ -70,13 +70,13 @@
   text-decoration: underline;
 }
 
-/* Container for Edit/Delete */
+
 .item-actions {
   display: flex;
   gap: 8px;
 }
 
-/* Edit Link as Button */
+
 .item-actions a {
   padding: 4px 10px;
   background-color: #993809;
@@ -93,7 +93,7 @@
   color: #993809;
 }
 
-/* Delete Button */
+
 .item-actions button {
   font-family: 'Pirata One', sans-serif;
   padding: 4px 10px;
@@ -111,7 +111,7 @@
   color: #993809;
 }
 
-/* Add New buttons */
+
 .campaign-body-div > a {
   display: inline-block;
   margin-top: 15px;
@@ -127,7 +127,7 @@
   background-color: #f0f0f0;
 }
 
-/* Delete Campaign Button at bottom */
+
 .campaign-body > form {
   text-align: center;
   margin-top: 30px;
