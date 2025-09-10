@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/players/edit.css" />
     <title>Edit <%= player.playerName %></title>
 </head>
+<%- include('../partials/_navbar.ejs') %>
 <body class="edit-player-body">
     <div class="edit-player-container">
         <h1 class="header">Edit <%= player.playerName %></h1>
@@ -37,6 +38,5 @@
             </div>
         </form>
     </div>
-    <%- include('../partials/_navbar.ejs') %> 
 </body>
 </html>

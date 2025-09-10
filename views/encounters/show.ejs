@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/encounters/show.css" />
     <title>Encounter <%= encounter.encounterName %> </title>
 </head>
+<%- include('../partials/_navbar.ejs') %>
 <body class="show-body">
     <div class="show-container">
         <h1 class="header"> <%= encounter.encounterName %> Encounter</h1>
@@ -23,7 +24,6 @@
                     </div>
                 </div>
             </div>
-    </div>
-        <%- include('../partials/_navbar.ejs') %> 
+    </div> 
 </body>
 </html>

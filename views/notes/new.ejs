@@ -4,17 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/sessionNotes/new.css" />
     <title>Add Session Notes</title>
 </head>
-<body>
-    <h1> Add Session Note</h1>
-    <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes" method = "POST">
-        <label for="sessionNumber">Session Number:</label>
-        <input type="text" name="sessionNumber" id="sessionNumber"/>
-        <label for="sessionDetails">Session Notes:</label>
-        <textarea name="sessionDetails"></textarea>
-        <button type="submit">Add Session Notes!</button>
-    </form>
+<%- include('../partials/_navbar.ejs') %> 
+<body class="new-body">
+    <div class="new-container">
+        <h1 class="header"> Add Session Note</h1>
+        <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>/notes" method = "POST" class="form">
+            <div class="form-grid">
+                <div class="form-box">
+                    <label for="sessionNumber">Session Number:</label>
+                    <input type="text" name="sessionNumber" id="sessionNumber"/>
+                    <label for="sessionDetails">Session Notes:</label>
+                    <textarea name="sessionDetails"></textarea>
+                    <div class="submit-container">
+                        <button type="submit" class="submitbtn">Add Session Note!</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

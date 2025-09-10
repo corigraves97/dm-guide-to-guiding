@@ -1,8 +1,13 @@
 <!-- views/partials/_navbar.ejs-->
-
+<link rel="stylesheet" href="/stylesheets/navbar.css">
 <nav>
     <% if(user) { %>
-    <a href="/users/<%= user._id %>/campaigns">Back to Home</a>
-    <a href="/auth/logout">Logout</a>
+    <div class="navbar">
+        <h1 class="header">DM's Guide to Guiding</h1>
+        <div class="nav-links">
+            <a class="authlink" href="/users/<%= user._id %>/campaigns">Back to Home</a>
+            <a class="authlink" href="/auth/logout">Logout</a>
+        </div>
+    </div>
     <% } %>
 </nav>

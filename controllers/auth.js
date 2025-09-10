@@ -10,7 +10,7 @@ router.get('/signup', (req, res) => {
     res.render('auth/signup.ejs')
 })
 
-router.get('/login', (req, res) =>{
+router.get('/login', (req, res) => {
     res.render('auth/login.ejs')
 })
 
@@ -20,11 +20,11 @@ router.get('/logout', (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {
-    const userInDatabase = await User.findOne({ username: req.body.username})
-    if (userInDatabase){
+    const userInDatabase = await User.findOne({ username: req.body.username })
+    if (userInDatabase) {
         return res.send('Username taken.')
     }
-    if (req.body.password !== req.body.confirmPassword){
+    if (req.body.password !== req.body.confirmPassword) {
         return res.send(`Password and Confirm Password must match`)
     }
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
@@ -34,7 +34,7 @@ router.post('/signup', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-    const userInDatabase = await User.findOne({ username: req.body.username})
+    const userInDatabase = await User.findOne({ username: req.body.username })
     if (!userInDatabase) {
         return res.send('Login failed. Please try agan.')
     }

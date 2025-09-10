@@ -11,9 +11,9 @@
         <%= campaign.campaignName %>
     </title>
 </head>
-
+<%- include('../partials/_navbar.ejs') %>
 <body class="campaign-body">
-    <h1>
+    <h1 class="header">
         <%= campaign.campaignName %> Campaign
     </h1>
     <div class="campaign-body-div">
@@ -96,7 +96,6 @@
     <form action="/users/<%= user._id %>/campaigns/<%= campaign._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= campaign.campaignName %> Campaign</button>
     </form>
-    <%- include('../partials/_navbar.ejs') %>
 </body>
 
 </html>

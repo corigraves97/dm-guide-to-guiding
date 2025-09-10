@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/encounters/edit.css" />
     <title>Edit Encounter <%= encounter.encounterName %></title>
 </head>
+<%- include('../partials/_navbar.ejs') %>
 <body class="edit-body">
     <div class="edit-container">
         <h1 class="header"> Edit Encounter <%= encounter.encounterName %></h1>
@@ -23,6 +24,5 @@
             </div>
         </form> 
     </div>
-    <%- include('../partials/_navbar.ejs') %> 
 </body>
 </html>

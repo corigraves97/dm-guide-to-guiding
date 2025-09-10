@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/players/show.css" />
     <title><%= player.playerName %> </title>
 </head>
+<%- include('../partials/_navbar.ejs') %>
 <body class="show-body">
     <div class="show-container">
         <h1 class="show-header"> <%= player.playerName %></h1>
@@ -28,7 +29,6 @@
                 </div>
             </div>
         </div>
-    </div>
-        <%- include('../partials/_navbar.ejs') %> 
+    </div> 
 </body>
 </html>
