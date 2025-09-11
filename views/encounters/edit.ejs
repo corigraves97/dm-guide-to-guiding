@@ -17,7 +17,7 @@
                     <label for="encounterName">Encounter Name:</label>
                     <input type="text" name="encounterName" id="encounterName" value="<%= encounter.encounterName %>" />
                     <label for="encounterDetails">Encounter Details:</label>
-                    <textarea name="encounterDetails" value="<%= encounter.encounterDetails %>"></textarea>
+                    <textarea name="encounterDetails"><%= encounter.encounterDetails %></textarea>
                 </div>
             <div class="submit-container">
                 <button type="submit" class="submitbtn">Update Encounter <%= encounter.encounterName %> !</button>
