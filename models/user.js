@@ -4,11 +4,9 @@ const playerSchema = new mongoose.Schema({
     playerType: {
         type: String, 
         enum: ['PC', 'NPC'],
-        required: true,
     },
     playerName: {
         type: String,
-        required: true,
     },
     playerRace: {
         type: String,   
@@ -30,7 +28,6 @@ const playerSchema = new mongoose.Schema({
 const encounterSchema = new mongoose.Schema({
     encounterName: {
         type: String, 
-        required: true,
     },
     encounterDetails: {
         type: String,
@@ -40,7 +37,6 @@ const encounterSchema = new mongoose.Schema({
 const noteSchema = new mongoose.Schema({
     sessionNumber: {
         type: String, 
-        required: true,
     },
     sessionDetails: {
         type: String,
